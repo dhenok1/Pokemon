@@ -1,5 +1,42 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
 .App {
   text-align: center;
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url('./assets/background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.content-inner {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 80%;
+  width: 100%;
 }
 
 .App-logo {
@@ -14,12 +51,7 @@
 }
 
 .App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
 }
 
 .App-link {
@@ -34,3 +66,269 @@
     transform: rotate(360deg);
   }
 }
+
+
+.Banner {
+  background-color: #e99262;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.search {
+  background-color: #dce85b;
+  color: black;
+  padding: 10px 20px;
+  margin-top: 100px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.searchBox {
+  border-color: #dce85b;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+}
+
+/* Styles for the container */
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.content-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px; 
+}
+
+.Card {
+  background-color: #627fe9; 
+  padding: 20px;
+  border-radius: 20px;
+  color: white;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: 4px solid #dce85b; 
+  height: 550px;
+  width: 325px;
+  margin: 0;
+  padding-top: 0px;
+  perspective: 1000px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.Card.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.flip-button {
+  background-color: transparent;
+  color: #000;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  position: absolute;
+  right: -10px;
+  bottom: -8px;
+}
+
+
+.Card h1 {
+  font-size: 24px;
+  margin: 0 0 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Card img {
+  width: 100%;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.Card h2 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+
+.back-button {
+  background-color: #dce85b; 
+  color: #000;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 15px;
+  display: block; 
+}
+
+.cardTitle {
+  font-size: 24px;
+  margin: 10px;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  width: 275px;
+}
+
+.Abilities {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.Abilities h2 {
+  margin: 0 10px 0 0;
+  flex-shrink: 0;
+}
+
+.ability-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ability-container {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+
+.ability-detail {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f9f9f9;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1;
+  width: 200px;
+  font-size: 14px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.abilityButton {
+  background-color: #627fe9; 
+  color: white;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.ability-separator {
+  margin-right: 5px;
+  color: white;
+} 
+
+
+.Moves {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Moves h2 {
+  margin: 0 0 10px 0;
+}
+
+.moves-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.move-item {
+  position: relative;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.movesButton {
+  background-color: #627fe9; 
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  width: 100%;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.moves-detail {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #f9f9f9;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1;
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.moves-container {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+}
+
+.moves-separator {
+  margin-right: 5px;
+  color: white;
+} 

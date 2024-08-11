@@ -1,11 +1,17 @@
-import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './LandingPage';
+import DisplayPage from './DisplayPage';
+import './App.css';
 
-const App = () => {
+function App() {
   return (
-    <div className="App">
-      <header className="App-header">App</header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/display" element={<DisplayPage />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
