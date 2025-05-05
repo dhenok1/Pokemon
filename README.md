@@ -3,8 +3,6 @@
 <!-- HEADER STYLE: CLASSIC -->
 <div align="center">
 
-<img src="extension\icon.png" width="30%" style="position: relative; top: 0; right: 0;" alt="Project Logo"/>
-
 # LOCKEDOUT
 
 <em></em>
